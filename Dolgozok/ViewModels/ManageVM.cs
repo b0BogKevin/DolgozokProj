@@ -27,13 +27,7 @@ namespace Dolgozok.ViewModels
         [RelayCommand]
         private void AddWorker()
         {
-            Worker worker = new()
-            {
-                Name = NewWorkerName,
-                Email = NewWorkerEmail,
-                Salary = 0
-                
-            };
+            Worker worker = new(NewWorkerName, NewWorkerEmail);
 
             try
             {
