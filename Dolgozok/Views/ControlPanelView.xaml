@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Dolgozok.Views.ControlPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Dolgozok.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label>Az összes dolgozó száma:</Label>
+            <Label Content="{Binding NumOfWorkers}"></Label>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Fizetést kapó dolgozók száma:</Label>
+            <Label Content="{Binding PaidWorkersNum}"></Label>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Fizetést nélküli dolgozók száma:</Label>
+            <Label Content="{Binding UnpaidWorkersNum}"></Label>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Legnagyobb fizetésű:</Label>
+            <Label Content="{Binding HighestSalaryName}"></Label>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label>Legkisebb fizetésű:</Label>
+            <Label Content="{Binding LowestSalaryName}"></Label>
+        </StackPanel>
+
+    </StackPanel>
+</UserControl>
