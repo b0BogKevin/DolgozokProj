@@ -23,8 +23,11 @@ namespace Dolgozok
         public int CountWorkers() => context.Workers.Count();
         public int CountPaid() => context.Workers.Count(w => w.Salary > 0);
         public int CountUnpaid() => context.Workers.Count(w => w.Salary == 0);
+        public double AvgSalary() => context.Workers.Select(w => w.Salary).Average();
+
         public string HighestSalaryName() => context.Workers.OrderByDescending(w => w.Salary).First().Name;
         public string LowestSalaryName() => context.Workers.OrderBy(w => w.Salary).First().Name;
+
 
         public void AddWorker(Worker worker)
         {

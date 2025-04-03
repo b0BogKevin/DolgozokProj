@@ -19,7 +19,7 @@ namespace Dolgozok.ViewModels
 
         public ManageVM()
         {
-            AllWorkers = repo.LoadAll(); ;
+            AllWorkers = repo.LoadAll();
            
 
         }
