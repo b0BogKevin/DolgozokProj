@@ -15,11 +15,11 @@ namespace Dolgozok.ViewModels
         [ObservableProperty] private string searchText;
 
 
-        private readonly DatabaseContext context = new();
+        private readonly Repo repo = new();
 
         public ManageVM()
         {
-            AllWorkers = [.. context.Workers];
+            AllWorkers = repo.LoadAll(); ;
            
 
         }
@@ -29,24 +29,16 @@ namespace Dolgozok.ViewModels
         {
             Worker worker = new(NewWorkerName, NewWorkerEmail);
 
-            try
-            {
-                context.Workers.Add(worker);
-                context.SaveChanges();
-                SearchText = " ";
-                Search();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Nem sikerült, " + e.Message);
-            }
-            
+            repo.AddWorker(worker);
+            SearchText = " ";
+            Search();
+
         }
 
         [RelayCommand]
         private void Search()
         {
-            AllWorkers = context.Workers.Where(w => w.Name.Contains(SearchText)).ToList();
+            AllWorkers = repo.Search(SearchText);
 
         }
     }

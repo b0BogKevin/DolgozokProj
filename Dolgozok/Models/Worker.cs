@@ -19,7 +19,7 @@ public partial class Worker
         {
             throw new Exception("Nem lehet nulla");
         }
-        if (!email.Contains("@"))
+        if (!email.Contains('@'))
         {
             throw new Exception("Kell @ email címbe");
         }

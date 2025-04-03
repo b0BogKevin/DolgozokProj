@@ -18,16 +18,16 @@ namespace Dolgozok.ViewModels
         [ObservableProperty] private string lowestSalaryName;
 
 
-        private readonly DatabaseContext context = new();
+        private readonly Repo repo = new();
 
         public async Task LoadAll()
         {
-            NumOfWorkers = context.Workers.Count();
-            PaidWorkersNum = context.Workers.Count(w=>w.Salary>0);
-            UnpaidWorkersNum = context.Workers.Count(w => w.Salary == 0);
+            NumOfWorkers = repo.CountWorkers();
+            PaidWorkersNum = repo.CountPaid();
+            UnpaidWorkersNum = repo.CountUnpaid();
 
-            HighestSalaryName = context.Workers.OrderByDescending(w => w.Salary).First().Name;
-            LowestSalaryName = context.Workers.OrderBy(w => w.Salary).First().Name;
+            HighestSalaryName = repo.HighestSalaryName();
+            LowestSalaryName = repo.LowestSalaryName();
 
         }
     }
