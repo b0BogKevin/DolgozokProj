@@ -10,4 +10,9 @@ public partial class Worker
     public string Email { get; set; }
 
     public int Salary { get; set; }
+
+    public override string ToString()
+    {
+        return $"{Name} ({Email}) - {Salary} Ft";
+    }
 }

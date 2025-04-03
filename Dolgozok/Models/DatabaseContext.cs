@@ -25,7 +25,7 @@ public partial class DatabaseContext : DbContext
     {
         modelBuilder.Entity<Worker>(entity =>
         {
-            entity.HasNoKey();
+            entity.HasKey(w=>w.Email);
 
             entity.Property(e => e.Email).HasColumnName("email");
             entity.Property(e => e.Name).HasColumnName("name");

@@ -26,11 +26,9 @@ namespace Dolgozok.Views
         {
             vm = new();
             DataContext = vm;
+
             InitializeComponent();
-            Loaded += async (_, __) =>
-            {
-                await vm.LoadAll();
-            };
+
         }
     }
 }

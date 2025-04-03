@@ -11,7 +11,25 @@
         <vms:ManageVM/>
     </UserControl.DataContext>
     <StackPanel>
-        <DataGrid ItemsSource="{Binding AllWorkers}"/>
+        <ScrollViewer Height="300">
+        <ListBox ItemsSource="{Binding AllWorkers}"/>
+        </ScrollViewer>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Új dolgozó neve"/>
+            <TextBox Text="{Binding NewWorkerName}" Width="100"></TextBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Új dolgozó email címe"/>
+            <TextBox Text="{Binding NewWorkerEmail}" Width="100"></TextBox>
+            <Button Command="{Binding AddWorkerCommand}">Hozzáad</Button>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Keresés"/>
+            <TextBox Text="{Binding SearchText}" Width="100"></TextBox>
+            <Button Command="{Binding SearchCommand}">Keresés</Button>
+        </StackPanel>
 
     </StackPanel>
 </UserControl>
