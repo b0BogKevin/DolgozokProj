@@ -27,13 +27,13 @@ namespace Dolgozok.ViewModels
         [RelayCommand]
         private void ShowControlPanel()
         {
-            vm = controlPanelVM;
+            Vm = controlPanelVM;
         }
 
         [RelayCommand]
         private void ShowManage()
         {
-            vm = manageVm;
+            Vm = manageVm;
         }
     }
 }

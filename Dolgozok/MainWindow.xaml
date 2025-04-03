@@ -16,11 +16,18 @@
         <DataTemplate DataType="{x:Type vms:ControlPanelVM}">
             <views:ControlPanelView/>
         </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vms:ManageVM}">
+            <views:ManageView/>
+        </DataTemplate>
     </Window.Resources>
     <StackPanel>
         <DockPanel>
             <Menu>
                 <MenuItem Header="Vezérlőpult" Command="{Binding ShowControlPanelCommand}"/>
+            </Menu>
+            <Menu>
+                <MenuItem Header="Manage" Command="{Binding ShowManageCommand}"/>
             </Menu>
         </DockPanel>
         <ContentControl Content="{Binding Vm}"></ContentControl>
